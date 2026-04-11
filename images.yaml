@@ -1,0 +1,14 @@
+# CascadeGuard image manifest
+#
+# Add images here to enrol them in the CI/CD pipeline.
+# See https://github.com/cascadeguard/cascadeguard-seed for format.
+#
+# Example:
+#
+# - name: my-image
+#   dockerfile: images/my-image/Dockerfile
+#   image: my-image
+#   tag: latest
+#   registry: ghcr.io/my-org
+
+[]
