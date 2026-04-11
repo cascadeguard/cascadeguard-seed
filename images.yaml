@@ -1,14 +1,26 @@
 # CascadeGuard image manifest
 #
-# Add images here to enrol them in the CI/CD pipeline.
-# See https://github.com/cascadeguard/cascadeguard-seed for format.
+# Single source of truth for images tracked by CascadeGuard.
+# Adding an image here enrols it in the check and scan pipelines.
 #
-# Example:
+# Required fields: name, image, tag
 #
-# - name: my-image
-#   dockerfile: images/my-image/Dockerfile
-#   image: my-image
-#   tag: latest
-#   registry: ghcr.io/my-org
+# Source fields (optional):
+#   source:
+#     dockerfile: images/my-image/Dockerfile   # local Dockerfile
+#     repository: https://github.com/org/repo  # upstream source repo
+#
+# Registry fields (optional):
+#   registry: ghcr.io/my-org                   # where to push built images
+#
+# Build fields (optional):
+#   build:
+#     enabled: true       # default; set false to check-only
+#     platform: github    # CI platform for builds
+#
+# Images with build.enabled: false are checked for tag drift and
+# CVEs but not built.
 
-[]
+- name: nginx
+  image: nginx
+  tag: stable-alpine
