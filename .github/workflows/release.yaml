@@ -1,0 +1,31 @@
+# CascadeGuard — Release Workflow (Thin Wrapper)
+#
+# Delegates the full release pipeline to the reusable workflow in
+# cascadeguard-actions. All release orchestration — matrix generation,
+# multi-platform build, dual-registry push, vulnerability scan, SBOM
+# generation, cosign signing, SLSA attestation, and GitHub Release
+# creation — is handled by the shared workflow. This file only provides
+# the tag trigger and repo-specific inputs.
+
+name: Release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+  packages: write
+  id-token: write
+  security-events: write
+  attestations: write
+
+jobs:
+  release:
+    uses: cascadeguard/cascadeguard-actions/.github/workflows/release.yaml@main
+    with:
+      image-prefix-ghcr: ghcr.io/${{ github.repository_owner }}
+      image-prefix-dockerhub: ${{ github.repository_owner }}
+      grype-config: shared/scanning/grype-config.yaml
+    secrets: inherit
