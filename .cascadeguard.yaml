@@ -4,7 +4,7 @@
 # any setting to override.  Per-image overrides in images.yaml take
 # precedence over values here.
 #
-# Reference: https://github.com/cascadeguard/cascadeguard
+# Reference: https://github.com/cascadeguard/cascadeguard-docs
 
 # ── Repo-level defaults ────────────────────────────────────────────
 # Applied to every image in images.yaml unless overridden per-image.
@@ -13,7 +13,7 @@
 #   registry: ghcr.io/myorg        # default registry for all images
 #   repository: ""                  # default repository prefix
 #   local:
-#     dir: images                   # directory containing per-image Dockerfiles
+#     dir: ""                       # prefix for source.dockerfile paths (e.g. "images")
 
 # ── CI platform ───────────────────────────────────────────────────
 # Target platform for `cg build generate`.
@@ -35,19 +35,27 @@
 #   period: 48h                     # default quarantine window
 
 # ── Check behaviour ───────────────────────────────────────────────
-# Controls what `cg images check` does after detecting drift.
+# Controls what `cg images check` does after detecting drift and
+# how changes are committed.
 #
-# promote    — update Dockerfile FROM lines to pin the new digest
-#              once quarantine has elapsed.
-# createPr   — open a PR (one per base image) with the pinned
-#              Dockerfile.  Uses the platform CLI (gh, glab, etc.).
+# check.state.destination
+#   Where state file changes (.cascadeguard/) are committed.
+#   "main" commits directly to main. "pr" opens a PR.
 #
-# Both default to true.  Set to false here to disable repo-wide,
-# or per-image in images.yaml with `promote: false`.
+# check.promote.destination
+#   Where Dockerfile promotions (digest pinning) are committed.
+#   "pr" opens one PR per base image (dependabot-style).
+#   "main" commits directly to main.
+#
+# Per-image override: set `promote: false` in images.yaml to skip
+# promotion for a specific image.
 
 # check:
-#   promote: true
-#   createPr: true
+#   state:
+#     destination: main             # main | pr
+#   promote:
+#     enabled: true                 # true | false
+#     destination: pr               # pr | main
 
 # ── Tagging ────────────────────────────────────────────────────────
 # Controls whether CascadeGuard creates git tags in the state repo
