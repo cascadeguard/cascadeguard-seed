@@ -1,0 +1,61 @@
+# CascadeGuard configuration
+# ─────────────────────────────────────────────────────────────────────
+# All values below show the built-in defaults.  Uncomment and change
+# any setting to override.  Per-image overrides in images.yaml take
+# precedence over values here.
+#
+# Reference: https://github.com/cascadeguard/cascadeguard
+
+# ── Repo-level defaults ────────────────────────────────────────────
+# Applied to every image in images.yaml unless overridden per-image.
+
+# defaults:
+#   registry: ghcr.io/myorg        # default registry for all images
+#   repository: ""                  # default repository prefix
+#   local:
+#     dir: images                   # directory containing per-image Dockerfiles
+
+# ── CI platform ───────────────────────────────────────────────────
+# Target platform for `cg build generate`.
+
+# ci:
+#   platform: github               # github | gitlab | circleci
+
+# ── Quarantine ─────────────────────────────────────────────────────
+# When an upstream base image publishes a new digest, CascadeGuard
+# waits for the quarantine period before promoting it into your
+# Dockerfiles.  This gives time to detect supply chain issues
+# (yanked tags, injected layers, CVEs reported against the new
+# version) before you build on top of it.
+#
+# Accepts: "48h", "7d", "0", "disabled"
+# Per-image override: set `quarantine:` on any entry in images.yaml.
+
+# quarantine:
+#   period: 48h                     # default quarantine window
+
+# ── Check behaviour ───────────────────────────────────────────────
+# Controls what `cg images check` does after detecting drift.
+#
+# promote    — update Dockerfile FROM lines to pin the new digest
+#              once quarantine has elapsed.
+# createPr   — open a PR (one per base image) with the pinned
+#              Dockerfile.  Uses the platform CLI (gh, glab, etc.).
+#
+# Both default to true.  Set to false here to disable repo-wide,
+# or per-image in images.yaml with `promote: false`.
+
+# check:
+#   promote: true
+#   createPr: true
+
+# ── Tagging ────────────────────────────────────────────────────────
+# Controls whether CascadeGuard creates git tags in the state repo
+# and/or the source repo when images are built.
+#
+# Per-image override: set `tagging:` on any entry in images.yaml.
+
+# tagging:
+#   stateRepo: false                # tag this repo on build
+#   sourceRepo: false               # tag the source repo on build
+#   sourceRepoSecret: CROSS_REPO_PAT  # secret name for cross-repo tagging
