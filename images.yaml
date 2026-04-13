@@ -26,10 +26,10 @@
   repository: cascadeguard/seed
   image: seed
   tag: latest
-  source:
-    provider: github
-    repo: cascadeguard/cascadeguard-exemplar
-    dockerfile: local/seed/Dockerfile
-    branch: main
+  # source:
+  #   provider: github
+  #   repo: cascadeguard/cascadeguard-seed
+  #   dockerfile: local/seed/Dockerfile
+  #   branch: main
   rebuildDelay: 7d
   autoRebuild: true
