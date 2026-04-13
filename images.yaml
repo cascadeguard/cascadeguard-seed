@@ -24,3 +24,5 @@
 - name: nginx
   image: nginx
   tag: stable-alpine
+  registry: ghcr.io/cascadeguard
+  dockerfile: images/nginx/Dockerfile
