@@ -17,12 +17,12 @@ repoURL: docker.io/library/nginx
 
 # Discovery
 firstDiscovered: '2026-04-13T19:08:52.551497+00:00'
-lastChecked: '2026-04-13T19:08:52.551497+00:00'
+lastChecked: '2026-04-13T19:37:56.677624+00:00'
 
 # Current state
 currentDigest: sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236
 publishedAt: null  # when upstream built this digest
-observedAt: 2026-04-13T19:08:53.096686+00:00  # when we first saw this digest
+observedAt: 2026-04-13 19:08:53.096686+00:00  # when we first saw this digest
 previousDigest: null
 
 # Promotion tracking
@@ -40,5 +40,5 @@ metadata: {}
 updateHistory:
   - digest: sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236
     publishedAt: null
-    observedAt: 2026-04-13T19:08:53.096686+00:00
+    observedAt: 2026-04-13 19:08:53.096686+00:00
     promotedAt: null
