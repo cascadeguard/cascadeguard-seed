@@ -1,35 +1,26 @@
 # CascadeGuard image manifest
 #
 # Single source of truth for images tracked by CascadeGuard.
-# Adding an image here enrols it in the check and scan pipelines.
+# Adding an image here enrols it in the check and build pipelines.
 #
-# Required fields: name, image, tag
+# Required fields: name, image, tag, registry, source.dockerfile
 #
-# Source fields (optional):
+# Source fields:
 #   source:
-#     dockerfile: images/my-image/Dockerfile   # local Dockerfile
-#     repository: https://github.com/org/repo  # upstream source repo
-#
-# Registry fields (optional):
-#   registry: ghcr.io/my-org                   # where to push built images
+#     dockerfile: images/my-image/Dockerfile   # path to Dockerfile
+#     repo: org/repo                           # set for remote sources
+#     branch: main                             # remote branch (default: main)
 #
 # Build fields (optional):
 #   build:
 #     enabled: true       # default; set false to check-only
-#     platform: github    # CI platform for builds
 #
 # Images with build.enabled: false are checked for tag drift and
 # CVEs but not built.
+
 - name: seed
-  dockerfile: local/seed/Dockerfile
-  registry: ghcr.io
-  repository: cascadeguard/seed
   image: seed
   tag: latest
-  # source:
-  #   provider: github
-  #   repo: cascadeguard/cascadeguard-seed
-  #   dockerfile: local/seed/Dockerfile
-  #   branch: main
-  rebuildDelay: 7d
-  autoRebuild: true
+  registry: ghcr.io/cascadeguard
+  source:
+    dockerfile: local/seed/Dockerfile
