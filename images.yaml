@@ -20,9 +20,16 @@
 #
 # Images with build.enabled: false are checked for tag drift and
 # CVEs but not built.
-
-- name: nginx
-  image: nginx
-  tag: stable-alpine
-  registry: ghcr.io/cascadeguard
-  dockerfile: images/nginx/Dockerfile
+- name: seed
+  dockerfile: local/seed/Dockerfile
+  registry: ghcr.io
+  repository: cascadeguard/seed
+  image: seed
+  tag: latest
+  source:
+    provider: github
+    repo: cascadeguard/cascadeguard-exemplar
+    dockerfile: local/seed/Dockerfile
+    branch: main
+  rebuildDelay: 7d
+  autoRebuild: true
