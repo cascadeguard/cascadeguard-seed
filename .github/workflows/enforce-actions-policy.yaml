@@ -25,7 +25,7 @@ on:
 
 jobs:
   audit:
-    uses: cascadeguard/cascadeguard-actions/.github/workflows/enforce-actions-policy.yaml@edd3aaab8a98b49b5b4fbddf0e9415bb15d4fbb8 # main
+    uses: cascadeguard/cascadeguard-actions/.github/workflows/enforce-actions-policy.yaml@a85d29a6a22f244ae0d3d922083553d0e8a4738d # main
     with:
       policy_path: ${{ inputs.policy_path }}
       workflows_dir: ${{ inputs.workflows_dir }}

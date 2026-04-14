@@ -21,10 +21,10 @@ jobs:
     steps:
       - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6
       - name: Set up CascadeGuard CLI
-        uses: cascadeguard/cascadeguard-actions/setup-cascadeguard@edd3aaab8a98b49b5b4fbddf0e9415bb15d4fbb8 # main
+        uses: cascadeguard/cascadeguard-actions/setup-cascadeguard@a85d29a6a22f244ae0d3d922083553d0e8a4738d # main
       - name: CascadeGuard validate
         run: cascadeguard images validate
 
   # ── Actions Policy Enforcement ───────────────────────────────────
   policy:
-    uses: cascadeguard/cascadeguard-actions/.github/workflows/enforce-actions-policy.yaml@edd3aaab8a98b49b5b4fbddf0e9415bb15d4fbb8 # main
+    uses: cascadeguard/cascadeguard-actions/.github/workflows/enforce-actions-policy.yaml@a85d29a6a22f244ae0d3d922083553d0e8a4738d # main
