@@ -40,7 +40,7 @@ jobs:
 
       - name: Resolve image from images.yaml
         id: resolve
-        uses: cascadeguard/cascadeguard-actions/resolve-image@9936314570a9c3540577e49ff970584c37111702 # main
+        uses: cascadeguard/cascadeguard-actions/resolve-image@a2c4597db798af7e37b9cf01d14e786860f55b85 # main
         with:
           image-name: ${{ github.event.client_payload.image_name }}
           image-tag: ${{ github.event.client_payload.image_tag }}
