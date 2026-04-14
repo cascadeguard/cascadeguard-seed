@@ -17,7 +17,7 @@ repoURL: docker.io/library/nginx
 
 # Discovery
 firstDiscovered: '2026-04-13T19:08:52.551497+00:00'
-lastChecked: '2026-04-14T14:07:05.164728+00:00'
+lastChecked: '2026-04-14T14:16:27.868013+00:00'
 
 # Current state
 currentDigest: sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236
@@ -27,7 +27,7 @@ previousDigest: null
 
 # Promotion tracking
 promotedDigest: sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236  # last digest pinned in Dockerfiles
-promotedAt: 2026-04-14T14:07:05.653159+00:00
+promotedAt: 2026-04-14 14:07:05.653159+00:00
 
 # Rebuild eligibility
 rebuildEligibleAt:
@@ -79,4 +79,4 @@ updateHistory:
   - digest: sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236
     publishedAt: null
     observedAt: 2026-04-13 19:08:53.096686+00:00
-    promotedAt: 2026-04-14T14:07:05.653159+00:00
+    promotedAt: 2026-04-14 14:07:05.653159+00:00
