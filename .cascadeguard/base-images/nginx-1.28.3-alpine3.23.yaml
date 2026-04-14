@@ -17,17 +17,17 @@ repoURL: docker.io/library/nginx
 
 # Discovery
 firstDiscovered: '2026-04-13T19:08:52.551497+00:00'
-lastChecked: '2026-04-14T11:42:45.987846+00:00'
+lastChecked: '2026-04-14T14:07:05.164728+00:00'
 
 # Current state
 currentDigest: sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236
-publishedAt: null  # when upstream built this digest
+publishedAt: 2026-03-24 23:11:15.718500+00:00  # when upstream built this digest
 observedAt: 2026-04-13 19:08:53.096686+00:00  # when we first saw this digest
 previousDigest: null
 
 # Promotion tracking
-promotedDigest: null  # last digest pinned in Dockerfiles
-promotedAt: null
+promotedDigest: sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236  # last digest pinned in Dockerfiles
+promotedAt: 2026-04-14T14:07:05.653159+00:00
 
 # Rebuild eligibility
 rebuildEligibleAt:
@@ -37,11 +37,46 @@ rebuildEligibleAt:
 metadata: {}
 
 # Available platforms
-platforms: []
+platforms:
+  - os: linux
+    architecture: amd64
+  - os: unknown
+    architecture: unknown
+  - os: linux
+    architecture: arm
+    variant: v6
+  - os: unknown
+    architecture: unknown
+  - os: linux
+    architecture: arm
+    variant: v7
+  - os: unknown
+    architecture: unknown
+  - os: linux
+    architecture: arm64
+    variant: v8
+  - os: unknown
+    architecture: unknown
+  - os: linux
+    architecture: 386
+  - os: unknown
+    architecture: unknown
+  - os: linux
+    architecture: ppc64le
+  - os: unknown
+    architecture: unknown
+  - os: linux
+    architecture: riscv64
+  - os: unknown
+    architecture: unknown
+  - os: linux
+    architecture: s390x
+  - os: unknown
+    architecture: unknown
 
 # Update history (last 10 digest changes)
 updateHistory:
   - digest: sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236
     publishedAt: null
     observedAt: 2026-04-13 19:08:53.096686+00:00
-    promotedAt: null
+    promotedAt: 2026-04-14T14:07:05.653159+00:00
