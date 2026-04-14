@@ -22,5 +22,5 @@ permissions:
 
 jobs:
   check:
-    uses: cascadeguard/cascadeguard-actions/.github/workflows/check.yaml@f8231c6a0c90cbfdb66c2241f296a25c919d4c32 # main
+    uses: cascadeguard/cascadeguard-actions/.github/workflows/check.yaml@7bd7df2e249f145a3b6e91d0bea84c7a00add902 # main
     secrets: inherit
