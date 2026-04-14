@@ -17,7 +17,7 @@ repoURL: docker.io/library/nginx
 
 # Discovery
 firstDiscovered: '2026-04-13T19:08:52.551497+00:00'
-lastChecked: '2026-04-14T10:34:18.343024+00:00'
+lastChecked: '2026-04-14T11:42:45.987846+00:00'
 
 # Current state
 currentDigest: sha256:a8b39bd9cf0f83869a2162827a0caf6137ddf759d50a171451b335cecc87d236
@@ -35,6 +35,9 @@ rebuildEligibleAt:
 
 # Metadata from registry
 metadata: {}
+
+# Available platforms
+platforms: []
 
 # Update history (last 10 digest changes)
 updateHistory:
