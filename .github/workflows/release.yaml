@@ -23,7 +23,7 @@ permissions:
 
 jobs:
   release:
-    uses: cascadeguard/cascadeguard-actions/.github/workflows/release.yaml@9936314570a9c3540577e49ff970584c37111702 # main
+    uses: cascadeguard/cascadeguard-actions/.github/workflows/release.yaml@a2c4597db798af7e37b9cf01d14e786860f55b85 # main
     with:
       image-prefix-ghcr: ghcr.io/${{ github.repository_owner }}
       image-prefix-dockerhub: ${{ github.repository_owner }}

@@ -28,7 +28,7 @@ on:
 
 jobs:
   build:
-    uses: cascadeguard/cascadeguard-actions/.github/workflows/build-image.yaml@9936314570a9c3540577e49ff970584c37111702 # main
+    uses: cascadeguard/cascadeguard-actions/.github/workflows/build-image.yaml@a2c4597db798af7e37b9cf01d14e786860f55b85 # main
     with:
       image_path: ${{ inputs.image_path }}
       image_name: ${{ inputs.image_name }}
